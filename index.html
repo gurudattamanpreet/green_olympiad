@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Zone Olympiad - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --green-color: #27ae60;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            height: 500px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://z-cdn-media.chatglm.cn/files/1d472eae-2a67-4d05-89b4-ff2c5f9a5fb1_WhatsApp%20Image%202025-10-31%20at%2015.24.05%20%282%29.jpeg?auth_key=1761908544-90a095a1ee3449448ff5e321c5724092-0-ba4adfdeabf455c3e46b52640adad96e');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--green-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .btn:hover {
+            background-color: #219653;
+            transform: translateY(-3px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--green-color);
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--light-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--green-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background-color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 250px;
+            background-color: #f0f0f0;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--light-color);
+        }
+
+        .testimonials-container {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+        }
+
+        .testimonial-card {
+            min-width: 350px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-right: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            scroll-snap-align: start;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--green-color);
+            position: absolute;
+            top: -15px;
+            left: -10px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--green-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-color: var(--green-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #219653;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--green-color);
+        }
+
+        .footer-section p,
+        .footer-section ul {
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--green-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--green-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                padding: 20px;
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="images\logo.jpg" alt="Green Zone Olympiad Logo">
+                <h1>Green Zone Olympiad</h1>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>A Step Towards Excellence</h2>
+            <p>Our Olympiad is dedicated to helping students reach their full potential, where education and personality development go hand in hand.</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Green Zone Olympiad was established in 1990, and since then we have been committed to providing quality education. Our mission is to develop students with academic excellence, moral values, and social responsibility.</p>
+                    <p>We have a team of experienced teachers who focus on the individual development of students. Our curriculum includes modern teaching methods and technology to prepare students for the challenges of the 21st century.</p>
+                    <p>Our Olympiad not only focuses on academic excellence but also encourages sports, arts, and cultural activities so that students can develop holistically.</p>
+                    <a href="#contact" class="btn">Contact Us</a>
+                </div>
+                <div class="about-image">
+                    <img src="images\IMG-20251031-WA0011.jpg" alt="Classroom Scene">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Features</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Quality Education</h3>
+                    <p>Our experienced teachers provide high-quality education to students and guide them according to their interests.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Science Laboratory</h3>
+                    <p>We have state-of-the-art science laboratories where students can gain practical knowledge and develop scientific thinking.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Library</h3>
+                    <p>Our library with thousands of books on various subjects enhances students' knowledge.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Sports Facilities</h3>
+                    <p>We have facilities for various sports that help students stay physically active.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Computer Lab</h3>
+                    <p>Our computer lab with the latest technology computers helps students learn digital skills.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Arts and Music</h3>
+                    <p>We provide special classes for students to develop their talents in arts and music.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Gallery</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images\IMG-20251031-WA0005.jpg" alt="Award Ceremony">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images\IMG-20251031-WA0006.jpg" alt="Students in Classroom">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images\IMG-20251031-WA0007.jpg" alt="Students Studying">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images\IMG-20251031-WA0008.jpg" alt="Exam Hall">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images\IMG-20251031-WA0014.jpg" alt="Auditorium">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images\IMG-20251031-WA0010.jpg" alt="Classroom with Students Writing">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images\IMG-20251031-WA0011.jpg" alt="Students in White Uniforms">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images\IMG-20251031-WA0012.jpg" alt="Group Photo in Mountains">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images\IMG-20251031-WA0013.jpg" alt="Group Photo at Temple">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimonials</h2>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        This Olympiad has not only made my child academically strong but also developed his personality. The teachers are very helpful and dedicated.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/parent1/50/50.jpg" alt="Parent" class="author-image">
+                        <div class="author-info">
+                            <h4>Rajesh Kumar</h4>
+                            <p>Parent</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        I am an alumnus of this Olympiad and the education I received here has played a significant role in achieving my current position.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/alumni1/50/50.jpg" alt="Alumni" class="author-image">
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Alumni</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        The basic facilities of the Olympiad are excellent and the teaching methods are modern. My child is excited to go to the Olympiad every day.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/seed/parent2/50/50.jpg" alt="Parent" class="author-image">
+                        <div class="author-info">
+                            <h4>Amit Singh</h4>
+                            <p>Parent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Education Road, New Delhi, 110001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 98765 43210</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@greenzoneolympiad.in</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Monday - Friday: 8:00 AM - 3:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+    <form action="https://formsubmit.co/gurudattamanpreet@gmail.com" method="POST">
+        <!-- FormSubmit Configuration -->
+        <input type="hidden" name="_subject" value="New Contact Form Submission from Green Zone Olympiad">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
+        
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Green Zone Olympiad</h3>
+                    <p>We are dedicated to helping students reach their full potential, where education and personality development go hand in hand.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Courses</h3>
+                    <ul>
+                        <li><a href="#">Primary Education</a></li>
+                        <li><a href="#">Secondary Education</a></li>
+                        <li><a href="#">Higher Secondary Education</a></li>
+                        <li><a href="#">Science Stream</a></li>
+                        <li><a href="#">Commerce Stream</a></li>
+                        <li><a href="#">Arts Stream</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to get the latest updates and news.</p>
+                    <form id="newsletterForm">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email Address" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Green Zone Olympiad. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('nav').classList.toggle('active');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.getElementById('nav').classList.remove('active');
+            });
+        });
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would normally send the data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you ${name}! Your message has been received. We will contact you soon.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Newsletter Form Submission
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form value
+            const email = this.querySelector('input[type="email"]').value;
+            
+            // Here you would normally send the data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you! You have subscribed to our newsletter.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Gallery Lightbox with Error Handling
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                const imgSrc = img.src;
+                
+                // Create lightbox elements
+                const lightbox = document.createElement('div');
+                lightbox.className = 'lightbox';
+                lightbox.style.position = 'fixed';
+                lightbox.style.top = '0';
+                lightbox.style.left = '0';
+                lightbox.style.width = '100%';
+                lightbox.style.height = '100%';
+                lightbox.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                lightbox.style.display = 'flex';
+                lightbox.style.alignItems = 'center';
+                lightbox.style.justifyContent = 'center';
+                lightbox.style.zIndex = '2000';
+                
+                const lightboxImg = document.createElement('img');
+                lightboxImg.src = imgSrc;
+                lightboxImg.style.maxWidth = '90%';
+                lightboxImg.style.maxHeight = '90%';
+                lightboxImg.style.objectFit = 'contain';
+                
+                // Add error handling for images
+                lightboxImg.onerror = function() {
+                    this.onerror = null;
+                    this.src = 'https://picsum.photos/seed/fallback/800/600.jpg';
+                };
+                
+                const closeBtn = document.createElement('div');
+                closeBtn.innerHTML = '&times;';
+                closeBtn.style.position = 'absolute';
+                closeBtn.style.top = '20px';
+                closeBtn.style.right = '40px';
+                closeBtn.style.color = 'white';
+                closeBtn.style.fontSize = '40px';
+                closeBtn.style.cursor = 'pointer';
+                
+                // Add elements to lightbox
+                lightbox.appendChild(lightboxImg);
+                lightbox.appendChild(closeBtn);
+                document.body.appendChild(lightbox);
+                
+                // Close lightbox on click
+                closeBtn.addEventListener('click', function() {
+                    document.body.removeChild(lightbox);
+                });
+                
+                lightbox.addEventListener('click', function(e) {
+                    if (e.target === lightbox) {
+                        document.body.removeChild(lightbox);
+                    }
+                });
+            });
+        });
+
+        // Image Error Handling for Gallery
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.onerror = function() {
+                this.onerror = null;
+                this.src = 'https://picsum.photos/seed/fallback/400/300.jpg';
+            };
+        });
+
+        // Scroll animations
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const scrollPos = window.scrollY + window.innerHeight;
+                
+                if (scrollPos > sectionTop + 100) {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Set initial state for scroll animations
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+    </script>
+</body>
+</html>
+
