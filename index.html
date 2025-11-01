@@ -581,63 +581,105 @@
         }
 
         /* Testimonials Section */
+        /* Testimonials Section */
         .testimonials {
-            background-color: var(--light-color);
-        }
+        background-color: var(--light-color);
+    }
 
+    .testimonials-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 25px;
+        margin-bottom: 30px;
+    }
+
+    .testimonial-card {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-card.hidden {
+        display: none;
+    }
+
+    .testimonial-text {
+        font-style: italic;
+        margin-bottom: 20px;
+        position: relative;
+        padding-left: 20px;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .testimonial-text::before {
+        content: '"';
+        font-size: 3rem;
+        color: var(--green-color);
+        position: absolute;
+        top: -15px;
+        left: -10px;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+    }
+
+    .author-image {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+        object-fit: cover;
+    }
+
+    .author-info h4 {
+        margin-bottom: 5px;
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+
+    .author-info p {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .see-more-btn {
+        display: block;
+        margin: 0 auto;
+        padding: 12px 40px;
+        background-color: var(--green-color);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .see-more-btn:hover {
+        background-color: #219653;
+        transform: translateY(-3px);
+    }
+
+    .see-more-btn.hidden {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
         .testimonials-container {
-            display: flex;
-            overflow-x: auto;
-            padding: 20px 0;
-            scroll-snap-type: x mandatory;
+            grid-template-columns: 1fr;
         }
-
-        .testimonial-card {
-            min-width: 350px;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            margin-right: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            scroll-snap-align: start;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .testimonial-text::before {
-            content: '"';
-            font-size: 3rem;
-            color: var(--green-color);
-            position: absolute;
-            top: -15px;
-            left: -10px;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-
-        .author-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-            object-fit: cover;
-        }
-
-        .author-info h4 {
-            margin-bottom: 5px;
-        }
-
-        .author-info p {
-            font-size: 0.9rem;
-            color: #666;
-        }
+    }
 
         /* Contact Section */
         .contact {
@@ -1251,50 +1293,536 @@
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Testimonials</h2>
+    <div class="container">
+        <div class="section-title">
+            <h2>Testimonials</h2>
+        </div>
+        <div class="testimonials-container">
+            <!-- Original 3 Testimonials -->
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    This Olympiad has not only made my child academically strong but also developed his personality. The teachers are very helpful and dedicated.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent1/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Rajesh Kumar</h4>
+                        <p>Parent</p>
+                    </div>
+                </div>
             </div>
-            <div class="testimonials-container">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        This Olympiad has not only made my child academically strong but also developed his personality. The teachers are very helpful and dedicated.
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://picsum.photos/seed/parent1/50/50.jpg" alt="Parent" class="author-image">
-                        <div class="author-info">
-                            <h4>Rajesh Kumar</h4>
-                            <p>Parent</p>
-                        </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    I am an alumnus of this Olympiad and the education I received here has played a significant role in achieving my current position.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/alumni1/50/50" alt="Alumni" class="author-image">
+                    <div class="author-info">
+                        <h4>Priya Sharma</h4>
+                        <p>Alumni</p>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        I am an alumnus of this Olympiad and the education I received here has played a significant role in achieving my current position.
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://picsum.photos/seed/alumni1/50/50.jpg" alt="Alumni" class="author-image">
-                        <div class="author-info">
-                            <h4>Priya Sharma</h4>
-                            <p>Alumni</p>
-                        </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    The basic facilities of the Olympiad are excellent and the teaching methods are modern. My child is excited to go to the Olympiad every day.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent2/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Amit Singh</h4>
+                        <p>Parent</p>
                     </div>
                 </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        The basic facilities of the Olympiad are excellent and the teaching methods are modern. My child is excited to go to the Olympiad every day.
+            </div>
+
+            <!-- Additional 35 Testimonials (Initially Hidden) -->
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    My daughter secured the district rank in Science Olympiad. The preparation material and mock tests were excellent. Thank you Green Zone!
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent3/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Sunita Verma</h4>
+                        <p>Parent</p>
                     </div>
-                    <div class="testimonial-author">
-                        <img src="https://picsum.photos/seed/parent2/50/50.jpg" alt="Parent" class="author-image">
-                        <div class="author-info">
-                            <h4>Amit Singh</h4>
-                            <p>Parent</p>
-                        </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The online exam platform was very user-friendly. My son felt confident and comfortable during the entire examination process.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent4/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Vikram Malhotra</h4>
+                        <p>Parent</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    Participating in Green Zone Olympiad boosted my confidence tremendously. I learned time management and problem-solving skills that help me in school too.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/student1/50/50" alt="Student" class="author-image">
+                    <div class="author-info">
+                        <h4>Aarav Patel</h4>
+                        <p>Class 9 Student</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    As a principal, I highly recommend this Olympiad. The awards ceremony was well-organized and the recognition motivated our entire school community.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/principal1/50/50" alt="Principal" class="author-image">
+                    <div class="author-info">
+                        <h4>Dr. Ramesh Gupta</h4>
+                        <p>School Principal</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The certificates are professionally designed and arrived on time. Our students proudly display them in their portfolios.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/teacher1/50/50" alt="Teacher" class="author-image">
+                    <div class="author-info">
+                        <h4>Neha Kapoor</h4>
+                        <p>Mathematics Teacher</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    My child won the school topper medal! The competitive environment helped him push his boundaries and achieve excellence.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent5/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Meena Desai</h4>
+                        <p>Parent</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The GK section was particularly interesting and helped broaden my knowledge beyond textbooks. Highly recommended!
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/student2/50/50" alt="Student" class="author-image">
+                    <div class="author-info">
+                        <h4>Ishita Reddy</h4>
+                        <p>Class 7 Student</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The registration process was smooth and the fee is very reasonable. Great value for the quality of education and recognition provided.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent6/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Ashok Jain</h4>
+                        <p>Parent</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    Being honored at the Principal's Meet at Hotel Lemon Tree was a prestigious experience. Thank you for recognizing our efforts!
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/principal2/50/50" alt="Principal" class="author-image">
+                    <div class="author-info">
+                        <h4>Mrs. Kavita Mehta</h4>
+                        <p>School Principal</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The national educational tour for state rank holders is a fantastic initiative. My daughter is so excited about this opportunity!
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent7/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Sanjay Agarwal</h4>
+                        <p>Parent</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The questions were challenging yet age-appropriate. It helped me identify my strengths and areas for improvement.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/student3/50/50" alt="Student" class="author-image">
+                    <div class="author-info">
+                        <h4>Rohan Khanna</h4>
+                        <p>Class 10 Student</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    Our school received a beautiful shield and certificate. It's displayed prominently in our award gallery and parents are impressed!
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/admin1/50/50" alt="Admin" class="author-image">
+                    <div class="author-info">
+                        <h4>Mr. Deepak Rao</h4>
+                        <p>School Administrator</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    I appreciated the detailed performance analysis sent after the results. It helped me understand where I need to focus more.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/student4/50/50" alt="Student" class="author-image">
+                    <div class="author-info">
+                        <h4>Ananya Nair</h4>
+                        <p>Class 8 Student</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The customer support team was very responsive to all our queries. They guided us through the entire registration process.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent8/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Pooja Bansal</h4>
+                        <p>Parent</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    Five subjects to choose from! My children participated in multiple subjects and performed excellently in all of them.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent9/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Ravi Chopra</h4>
+                        <p>Parent</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    This olympiad has become an annual tradition in our school. Students eagerly wait for the registration to open each year.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/teacher2/50/50" alt="Teacher" class="author-image">
+                    <div class="author-info">
+                        <h4>Anjali Saxena</h4>
+                        <p>Science Teacher</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The district rank holder recognition ceremony was amazing! Meeting government dignitaries was a memorable experience for my son.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent10/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Mahesh Yadav</h4>
+                        <p>Parent</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    I loved the English section! It tested not just grammar but also comprehension and vocabulary in a fun way.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/student5/50/50" alt="Student" class="author-image">
+                    <div class="author-info">
+                        <h4>Tanvi Shah</h4>
+                        <p>Class 6 Student</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The online format is perfect for today's generation. No travel hassles and students can take the exam from the comfort of home.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent11/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Suresh Iyer</h4>
+                        <p>Parent</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    As an educator, I'm impressed by the curriculum-aligned questions. They complement what we teach in school perfectly.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/teacher3/50/50" alt="Teacher" class="author-image">
+                    <div class="author-info">
+                        <h4>Rahul Bhatia</h4>
+                        <p>Social Science Teacher</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    My daughter secured a national rank! The international educational trip opportunity is beyond our expectations. Thank you!
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent12/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Geeta Pillai</h4>
+                        <p>Parent</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The maths section was challenging and fun! It made me think creatively and apply concepts in new ways.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/student6/50/50" alt="Student" class="author-image">
+                    <div class="author-info">
+                        <h4>Karan Sinha</h4>
+                        <p>Class 5 Student</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    Every child getting a participation certificate is wonderful! It encourages even those who don't rank to keep trying.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent13/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Lakshmi Krishnan</h4>
+                        <p>Parent</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The result declaration was prompt and transparent. The entire process from registration to results was seamless.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/principal3/50/50" alt="Principal" class="author-image">
+                    <div class="author-info">
+                        <h4>Dr. Alok Mishra</h4>
+                        <p>School Principal</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    Being part of India's Young Leaders community has opened many opportunities for networking and learning from peers nationwide.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/student7/50/50" alt="Student" class="author-image">
+                    <div class="author-info">
+                        <h4>Divya Rawat</h4>
+                        <p>Class 10 Student</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The Award of Excellence for principals is a thoughtful gesture. It motivates us to encourage more students to participate.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/principal4/50/50" alt="Principal" class="author-image">
+                    <div class="author-info">
+                        <h4>Mrs. Shikha Pandey</h4>
+                        <p>School Principal</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    Both CBSE and ICSE board students can participate - this inclusivity is what makes Green Zone special!
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent14/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Manish Tiwari</h4>
+                        <p>Parent</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The social science olympiad broadened my understanding of history and geography. The questions were thought-provoking!
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/student8/50/50" alt="Student" class="author-image">
+                    <div class="author-info">
+                        <h4>Arjun Menon</h4>
+                        <p>Class 9 Student</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    We registered 150 students from our school and the bulk registration process was very smooth and efficient.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/coordinator1/50/50" alt="Coordinator" class="author-image">
+                    <div class="author-info">
+                        <h4>Pankaj Kumar</h4>
+                        <p>Activity Coordinator</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The medal and achievement shield for school toppers are of excellent quality. My son treasures them!
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent15/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Rekha Bose</h4>
+                        <p>Parent</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    I participated for the first time this year and secured a district rank. Can't wait for next year's olympiad!
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/student9/50/50" alt="Student" class="author-image">
+                    <div class="author-info">
+                        <h4>Sneha Patil</h4>
+                        <p>Class 4 Student</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The timing of the exam in February is perfect - after the pre-boards but before the final exams. Well thought out!
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/teacher4/50/50" alt="Teacher" class="author-image">
+                    <div class="author-info">
+                        <h4>Vijay Sharma</h4>
+                        <p>English Teacher</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    At just ₹125 per subject, this is the most affordable olympiad with such great recognition and prizes!
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent16/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Ramesh Naik</h4>
+                        <p>Parent</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The practice papers provided before the exam were very helpful. They gave me a clear idea of the question pattern.
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/student10/50/50" alt="Student" class="author-image">
+                    <div class="author-info">
+                        <h4>Kriti Bajaj</h4>
+                        <p>Class 7 Student</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    Our school has been participating for 3 years now. Each year the organization and execution become better!
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/principal5/50/50" alt="Principal" class="author-image">
+                    <div class="author-info">
+                        <h4>Mr. Anil Bhardwaj</h4>
+                        <p>School Principal</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    My twins participated in different subjects and both won certificates. Thank you for making learning competitive and fun!
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/parent17/50/50" alt="Parent" class="author-image">
+                    <div class="author-info">
+                        <h4>Kavita Malhotra</h4>
+                        <p>Parent</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card hidden">
+                <div class="testimonial-text">
+                    The Green Certificate is now part of my portfolio. It has helped me in various competitions and applications!
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://picsum.photos/seed/student11/50/50" alt="Student" class="author-image">
+                    <div class="author-info">
+                        <h4>Aditya Singh</h4>
+                        <p>Class 10 Student</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        <button class="see-more-btn" id="seeMoreBtn">See More Testimonials</button>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -1562,6 +2090,29 @@
             section.style.transform = 'translateY(20px)';
             section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+         document.getElementById('seeMoreBtn')?.addEventListener('click', function() {
+        const hiddenCards = document.querySelectorAll('.testimonial-card.hidden');
+        const seeMoreBtn = document.getElementById('seeMoreBtn');
+        
+        hiddenCards.forEach(card => {
+            card.classList.remove('hidden');
+        });
+        
+        // Hide the button after showing all testimonials
+        seeMoreBtn.classList.add('hidden');
+        
+        // Optional: Smooth scroll to first newly revealed testimonial
+        if (hiddenCards.length > 0) {
+            hiddenCards[0].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    });
     </script>
 </body>
 </html>
