@@ -237,6 +237,295 @@
             color: var(--primary-color);
         }
 
+        /* Why Participate Section */
+        .why-participate {
+            background-color: white;
+        }
+
+        .why-participate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .why-participate-card {
+            background-color: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid var(--green-color);
+        }
+
+        .why-participate-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .why-participate-icon {
+            font-size: 3.5rem;
+            color: var(--green-color);
+            margin-bottom: 25px;
+        }
+
+        .why-participate-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .why-participate-card p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Who Can Participate Section */
+        .who-can-participate {
+            background-color: var(--light-color);
+        }
+
+        .participation-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .participation-card {
+            background-color: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .participation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .participation-icon {
+            font-size: 3rem;
+            color: var(--green-color);
+            margin-bottom: 20px;
+        }
+
+        .participation-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .participation-card p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .subjects-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            margin-bottom: 50px;
+        }
+
+        .subjects-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .subjects-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .subject-item {
+            background-color: var(--green-color);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .subject-item:hover {
+            transform: translateY(-3px);
+            background-color: #219653;
+        }
+
+        .registration-details {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .registration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .registration-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .registration-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .registration-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--green-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .registration-text h4 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .registration-text p {
+            color: #555;
+            font-weight: 500;
+        }
+
+        .special-event {
+            background: linear-gradient(135deg, var(--green-color), #219653);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .special-event h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .special-event p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Awards Section */
+        .awards {
+            background-color: white;
+        }
+
+        .awards-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .award-category {
+            margin-bottom: 60px;
+        }
+
+        .award-category h3 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .award-category h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--green-color);
+        }
+
+        .award-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .award-card {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid var(--green-color);
+        }
+
+        .award-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .award-icon {
+            font-size: 2.5rem;
+            color: var(--green-color);
+            margin-bottom: 20px;
+        }
+
+        .award-card h4 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .award-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .special-award {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .special-award h4 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .special-award p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
         /* Gallery Section */
         .gallery {
             background-color: white;
@@ -597,6 +886,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#features">Features</a></li>
+                    <li><a href="#awards">Awards</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -685,6 +975,210 @@
                     </div>
                     <h3>Arts and Music</h3>
                     <p>We provide special classes for students to develop their talents in arts and music.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why You Should Participate Section -->
+    <section id="why-participate" class="why-participate">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why You Should Participate?</h2>
+            </div>
+            <div class="why-participate-grid">
+                <div class="why-participate-card">
+                    <div class="why-participate-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Win Exciting Prizes</h3>
+                    <p>Win exciting prizes, certificates, and national recognition.</p>
+                </div>
+                <div class="why-participate-card">
+                    <div class="why-participate-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Boost Academic Profile</h3>
+                    <p>Boost your academic profile with an official Green Certificate.</p>
+                </div>
+                <div class="why-participate-card">
+                    <div class="why-participate-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Become Part of Community</h3>
+                    <p>Become part of India's Young leaders community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Can Participate Section -->
+    <section id="who-can-participate" class="who-can-participate">
+        <div class="container">
+            <div class="section-title">
+                <h2>Who Can Participate?</h2>
+            </div>
+            <div class="participation-container">
+                <div class="participation-card">
+                    <div class="participation-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Eligibility</h3>
+                    <p>Students from Class 1 to 10</p>
+                    <p>(Any School, Any Board)</p>
+                </div>
+                <div class="participation-card">
+                    <div class="participation-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Participation Mode</h3>
+                    <p>Participation is 100% Online</p>
+                    <p>Easy, Fast & Fun!</p>
+                </div>
+            </div>
+
+            <div class="subjects-section">
+                <h3 class="subjects-title">Subjects We Offer</h3>
+                <div class="subjects-list">
+                    <div class="subject-item">Maths</div>
+                    <div class="subject-item">Science</div>
+                    <div class="subject-item">Social Science</div>
+                    <div class="subject-item">English</div>
+                    <div class="subject-item">G.K.</div>
+                </div>
+            </div>
+
+            <div class="registration-details">
+                <h3 class="subjects-title">🧾 Registration Details</h3>
+                <div class="registration-grid">
+                    <div class="registration-item">
+                        <div class="registration-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="registration-text">
+                            <h4>Mode</h4>
+                            <p>Online</p>
+                        </div>
+                    </div>
+                    <div class="registration-item">
+                        <div class="registration-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <div class="registration-text">
+                            <h4>Fee</h4>
+                            <p>₹125 per subject only</p>
+                        </div>
+                    </div>
+                    <div class="registration-item">
+                        <div class="registration-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="registration-text">
+                            <h4>Exam Date</h4>
+                            <p>First week of February 2026</p>
+                        </div>
+                    </div>
+                    <div class="registration-item">
+                        <div class="registration-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="registration-text">
+                            <h4>Result Announcement</h4>
+                            <p>Last week of February 2026</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="special-event">
+                    <h4>🏆 Principal's Meet and Recognition</h4>
+                    <p>Second week of March 2026 at Hotel Lemon Tree, Indore (M.P.)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognitions Section -->
+    <section id="awards" class="awards">
+        <div class="container">
+            <div class="section-title">
+                <h2>🌿 Awards & Recognitions</h2>
+            </div>
+            <div class="awards-container">
+                <!-- For Students -->
+                <div class="award-category">
+                    <h3>🧒 For Students</h3>
+                    <div class="award-grid">
+                        <div class="award-card">
+                            <div class="award-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h4>Certificate of Participation</h4>
+                            <p>Every participating student will receive an Official Certificate of Participation from the Green Zone Olympiad.</p>
+                        </div>
+                        <div class="award-card">
+                            <div class="award-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h4>School Topper Award</h4>
+                            <p>The School Topper will be awarded a Medal, Certificate, and an Achievement Shield in recognition of outstanding performance.</p>
+                        </div>
+                        <div class="award-card">
+                            <div class="award-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>District Rank Holders</h4>
+                            <p>Top 10 District Rank Holders will be honored by Government Dignitaries during the Annual Principal Meet, a prestigious event held once every year.</p>
+                        </div>
+                        <div class="award-card">
+                            <div class="award-icon">
+                                <i class="fas fa-globe-asia"></i>
+                            </div>
+                            <h4>State Rank Holders</h4>
+                            <p>State Rank Holders will be rewarded with an exclusive National Educational Tour.</p>
+                        </div>
+                        <div class="award-card">
+                            <div class="award-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h4>National Rank Holders</h4>
+                            <p>National Rank Holders will get the lifetime opportunity of an International Educational Trip representing India globally.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- For Principals -->
+                <div class="award-category">
+                    <h3>🎓 For Principals</h3>
+                    <div class="special-award">
+                        <div class="award-grid">
+                            <div class="award-card">
+                                <div class="award-icon">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <h4>Individual Award of Excellence</h4>
+                                <p>Every Principal will receive an Individual Award of Excellence at the Annual Principal Meet hosted at Hotel Lemon Tree.</p>
+                            </div>
+                            <div class="award-card">
+                                <div class="award-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <h4>Certification of Appreciation</h4>
+                                <p>Principals will also be honored with a Certification of Appreciation for their continuous efforts in introducing innovative activities and fostering the holistic development of students.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- For Schools -->
+                <div class="award-category">
+                    <h3>🏫 For Schools</h3>
+                    <div class="special-award">
+                        <div class="award-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h4>Official Recognition</h4>
+                        <p>Participating Schools will be presented with an Official Certificate of Participation and a Prestigious School Shield to be displayed in their Award Gallery.</p>
+                        <p>This recognition celebrates the school's commitment towards promoting student development through the Green Zone Olympiad.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -825,7 +1319,7 @@
                         </div>
                         <div>
                             <h4>Phone</h4>
-                            <p>+918602050501</p>
+                            <p>+91 98765 43210</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -834,7 +1328,7 @@
                         </div>
                         <div>
                             <h4>Email</h4>
-                            <p>greenzoneolympiad@gmail.com</p>
+                            <p>info@greenzoneolympiad.in</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -898,6 +1392,9 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#features">Features</a></li>
+                        <li><a href="#why-participate">Why Participate</a></li>
+                        <li><a href="#who-can-participate">Who Can Participate</a></li>
+                        <li><a href="#awards">Awards</a></li>
                         <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -952,7 +1449,7 @@
         });
 
         // Contact Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form values
@@ -970,7 +1467,7 @@
         });
 
         // Newsletter Form Submission
-        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+        document.getElementById('newsletterForm')?.addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form value
