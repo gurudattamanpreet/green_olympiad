@@ -941,11 +941,36 @@
         }
 
         .footer-bottom {
-            text-align: center;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
             color: #bbb;
+        }
+
+        .powered-by-footer {
+            margin: 0;
+        }
+
+        .powered-by-footer a {
+            color: var(--green-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .powered-by-footer a:hover {
+            color: #219653;
+        }
+
+        @media (max-width: 768px) {
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
         }
 
         /* Animations */
@@ -2168,6 +2193,7 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 Green Zone Olympiad. All Rights Reserved.</p>
+                <p class="powered-by-footer">Powered by: <a href="#" target="_blank">Zenturatech Pvt. Ltd.</a></p>
             </div>
         </div>
     </footer>
